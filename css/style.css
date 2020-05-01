@@ -14,3 +14,55 @@ body {
   color: #6d5d4b;
   font-weight: 300;
   line-height: 1.6; }
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  /*
+  1- create the sidebar column of 8rem
+  2- create a column which has the min size of 5rem and max size of 1 rem from the rest of the page space
+  3 -repeat 8 column with max-width of 14 rem. The min-width will be based on the content;
+  4- create 1 column of 1 fr of rest avaiable space
+  
+  */
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  .container > * {
+    padding: 40px;
+    font-size: 3rem; }
+
+.sidebar {
+  background-color: #c69963;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1; }
+
+.header {
+  background-color: red;
+  grid-column: full-start / col-end 6; }
+
+.realtors {
+  background-color: #101d2c;
+  grid-column: col-start 7 / full-end; }
+
+.features {
+  background-color: teal;
+  grid-column: center-start / center-end; }
+
+.story__pictures {
+  background-color: #c69963;
+  grid-column: full-start / col-end 4; }
+
+.story__content {
+  background-color: pink;
+  grid-column: col-start 5 / full-end; }
+
+.homes {
+  background-color: green;
+  grid-column: center-start / center-end; }
+
+.gallery {
+  background-color: black;
+  grid-column: full-start / full-end; }
+
+.footer {
+  background-color: limegreen;
+  grid-column: full-start / full-end; }
