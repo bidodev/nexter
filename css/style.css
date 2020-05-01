@@ -26,9 +26,6 @@ body {
   
   */
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
-  .container > * {
-    padding: 40px;
-    font-size: 3rem; }
 
 .sidebar {
   background-color: #c69963;
@@ -44,8 +41,11 @@ body {
   grid-column: col-start 7 / full-end; }
 
 .features {
-  background-color: teal;
-  grid-column: center-start / center-end; }
+  grid-column: center-start / center-end;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem; }
 
 .story__pictures {
   background-color: #c69963;
