@@ -1,0 +1,34 @@
+//////GRID
+.container {
+  display: grid;
+
+  //define the grid rows tracks
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+  //define the grid columns tracks
+  /*
+    1- create the sidebar column of 8rem
+    2- create a column which has the min size of 5rem and max size of 1 rem from the rest of the page space
+    3 -repeat 8 column with max-width of 14 rem. The min-width will be based on the content;
+    4- create 1 column of 1 fr of rest avaiable space
+    
+    */
+  grid-template-columns:
+    [sidebar-start]8rem[sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end])
+    [center-end]
+    minmax(6rem, 1fr) [full-end];
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end])
+      [center-end]
+      minmax(6rem, 1fr) [full-end];
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 6rem calc(100vh - 6rem);
+  }
+}

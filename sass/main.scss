@@ -1,11 +1,9 @@
-@import "base";
-@import "typography";
+@charset "UTF-8";
 
-@import "sidebar";
-@import "header";
-@import "realtors";
-@import "features";
-@import "story";
-@import "homes";
-@import "gallery";
-@import "footer";
+// 1. Configuration, base grid and helpers
+@import "base/variables", "base/base", "base/grid", "base/typography",
+  "base/helpers", "base/functions";
+
+// 2. Page and sections styling rules
+@import "page/sidebar", "page/header", "page/realtors", "page/features",
+  "page/story", "page/homes", "page/gallery", "page/footer";
