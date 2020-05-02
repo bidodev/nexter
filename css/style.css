@@ -31,9 +31,14 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400; }
 
+.heading-1 {
+  font-size: 4.5rem;
+  color: #f9f7f6; }
+
 .heading-2 {
   font-size: 4rem;
-  font-style: italic; }
+  font-style: italic;
+  line-height: 1; }
   .heading-2--light {
     color: #f9f7f6; }
   .heading-2--dark {
@@ -103,8 +108,26 @@ body {
     transform: translateY(1.3rem); }
 
 .header {
-  background-color: red;
-  grid-column: full-start / col-end 6; }
+  background-color: #54483a;
+  grid-column: full-start / col-end 6;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center center;
+  padding: 9rem;
+  padding-top: 4rem;
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content;
+  gap: 1.5rem 0;
+  justify-content: center; }
+  .header__logo {
+    height: 3rem;
+    justify-self: center; }
+  .header__btn {
+    align-self: start;
+    justify-self: start; }
+  .header__seenon-logos img {
+    height: 2.5rem; }
 
 .realtors {
   background-color: #101d2c;
@@ -234,6 +257,7 @@ body {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(7, 5vw);
+  padding: 1.5rem;
   gap: 1.5rem; }
   .gallery__item--1 {
     grid-row: 1 / span 2;
